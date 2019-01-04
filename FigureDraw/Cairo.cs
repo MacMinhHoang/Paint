@@ -16,12 +16,17 @@ namespace FigureDraw
         public Cairo(Context context)
         {
             lib = context;
+            lib.SetSourceRGB(1, 0, 0);
         }
 
         public override void drawEllipse(int cx, int cy, int hradius, int vradius)
         {
-            lib.Scale(hradius, vradius);
-            lib.Arc(cx, cy, hradius, 0, 0);
+            //lib.NewSubPath();
+            //lib.Scale(1, 0.7);
+            lib.Arc(cx, cy, hradius, 0.0, 2.0 * Math.PI);
+            //lib.Rectangle(cx, cy, hradius, vradius);
+            //lib.MoveTo(cx, cy);
+            //lib.LineTo(cx + 10, cy);
             lib.Stroke();
         }
 

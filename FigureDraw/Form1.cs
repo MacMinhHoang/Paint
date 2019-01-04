@@ -21,15 +21,11 @@ namespace FigureDraw
 
         List<Shape> shapes = new List<Shape>();
         Diagram diagram = new Diagram(new FcFactory());
-        System.Drawing.Graphics g;
-        CommonGraphics lib;
         Boolean isPainting = false;
 
         public Form1()
         {
             InitializeComponent();
-            g = pnCanvas.CreateGraphics();
-            lib = new GdiPlus(g);
         }
 
         private void pnCanvas_click(object sender, MouseEventArgs e)
@@ -88,9 +84,23 @@ namespace FigureDraw
         {
             if (isPainting)
             {
+                CommonGraphics lib;
+                System.Drawing.Graphics g = e.Graphics;
+                if (radioGdi.Checked)
+                {
+                    lib = new GdiPlus(g);
+                }
+                else
+                {
+                    Surface s = new Win32Surface(g.GetHdc());
+                    Context c = new Context(s);
+                    lib = new Cairo(c);
+                }
                 foreach (Shape shape in shapes)
                     shape.draw(lib);
                 diagram.draw(lib);
+
+                g.Dispose();
             }
         }
 
@@ -141,19 +151,6 @@ namespace FigureDraw
             if (r.Checked)
                 diagram.convertFactory(new AcFactory());
             pnCanvas.Invalidate();
-        }
-
-        private void radioGdi_CheckedChanged(object sender, EventArgs e)
-        {
-            RadioButton radio = (RadioButton)sender;
-            if (radio.Checked)
-                lib = new GdiPlus(g);
-            else
-            {
-                Surface s = new Win32Surface(g.GetHdc());
-                Context c = new Context(s);
-                lib = new Cairo(c);
-            }
         }
     }
 }

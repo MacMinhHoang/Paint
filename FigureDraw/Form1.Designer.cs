@@ -50,13 +50,13 @@
             this.radioDfdD = new System.Windows.Forms.RadioButton();
             this.radioFcD = new System.Windows.Forms.RadioButton();
             this.pnBlock = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.radioInputB = new System.Windows.Forms.RadioButton();
             this.radioStartB = new System.Windows.Forms.RadioButton();
             this.pnEffect = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cbHighlight = new System.Windows.Forms.CheckBox();
             this.cbShadow = new System.Windows.Forms.CheckBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.cbHighlight = new System.Windows.Forms.CheckBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.pnShape.SuspendLayout();
             this.pnLib.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -171,7 +171,6 @@
             this.radioGdi.TabStop = true;
             this.radioGdi.Text = "GdiPlus";
             this.radioGdi.UseVisualStyleBackColor = true;
-            this.radioGdi.CheckedChanged += new System.EventHandler(this.radioGdi_CheckedChanged);
             // 
             // menuStrip1
             // 
@@ -301,6 +300,16 @@
             this.pnBlock.Size = new System.Drawing.Size(200, 51);
             this.pnBlock.TabIndex = 6;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(6, 16);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(56, 20);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Block :";
+            // 
             // radioInputB
             // 
             this.radioInputB.AutoSize = true;
@@ -334,15 +343,15 @@
             this.pnEffect.Size = new System.Drawing.Size(214, 51);
             this.pnEffect.TabIndex = 7;
             // 
-            // label1
+            // cbShadow
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 14);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 20);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Effect :";
+            this.cbShadow.AutoSize = true;
+            this.cbShadow.Location = new System.Drawing.Point(142, 16);
+            this.cbShadow.Name = "cbShadow";
+            this.cbShadow.Size = new System.Drawing.Size(65, 17);
+            this.cbShadow.TabIndex = 6;
+            this.cbShadow.Text = "Shadow";
+            this.cbShadow.UseVisualStyleBackColor = true;
             // 
             // cbHighlight
             // 
@@ -354,25 +363,15 @@
             this.cbHighlight.Text = "Highlight";
             this.cbHighlight.UseVisualStyleBackColor = true;
             // 
-            // cbShadow
+            // label1
             // 
-            this.cbShadow.AutoSize = true;
-            this.cbShadow.Location = new System.Drawing.Point(142, 16);
-            this.cbShadow.Name = "cbShadow";
-            this.cbShadow.Size = new System.Drawing.Size(65, 17);
-            this.cbShadow.TabIndex = 6;
-            this.cbShadow.Text = "Shadow";
-            this.cbShadow.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(6, 16);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 20);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Block :";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(3, 14);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(60, 20);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Effect :";
             // 
             // Form1
             // 
